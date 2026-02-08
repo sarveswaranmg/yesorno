@@ -97,14 +97,16 @@ body {
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  transform: rotate(var(--start-rotate));
 }
 
 @keyframes fall {
   from {
-    transform: translateY(0);
+    transform: translateY(0) rotate(var(--start-rotate));
   }
   to {
-    transform: translateY(120vh);
+    transform: translateY(120vh)
+      rotate(calc(var(--start-rotate) + 360deg * var(--rotate-dir)));
   }
 }
 
@@ -112,7 +114,6 @@ body {
   padding: 24px;
   min-width: unset;
   width: 90%;
-  max-width: 360px;
 }
 
 .celebration {
@@ -124,12 +125,11 @@ body {
 
 .celebration img {
   width: 100%;
-  max-width: 280px;
   height: auto;
   border-radius: 12px;
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .wrapper {
     width: 88%;
     max-width: 320px;
@@ -162,4 +162,4 @@ body {
   .rose {
     font-size: 1.4rem;
   }
-}
+} */

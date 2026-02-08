@@ -4,20 +4,27 @@ import yesImg from "./assets/yes.webp";
 function RoseShower() {
   return (
     <div className="rose-container">
-      {Array.from({ length: 40 }).map((_, i) => (
-        <span
-          key={i}
-          className="rose"
-          style={{
-            left: Math.random() * 100 + "vw",
-            top: "-10vh", // always start above screen
-            animationDelay: `-${Math.random() * 10}s`, // fake pre-running
-            animationDuration: 6 + Math.random() * 6 + "s",
-          }}
-        >
-          🌹
-        </span>
-      ))}
+      {Array.from({ length: 40 }).map((_, i) => {
+        const startRotation = Math.random() * 360;
+        const rotateDirection = Math.random() > 0.5 ? 1 : -1;
+
+        return (
+          <span
+            key={i}
+            className="rose"
+            style={{
+              left: Math.random() * 85 + "vw",
+              top: "-10vh",
+              animationDelay: `-${Math.random() * 10}s`,
+              animationDuration: 6 + Math.random() * 6 + "s",
+              "--start-rotate": `${startRotation}deg`,
+              "--rotate-dir": rotateDirection,
+            }}
+          >
+            🌹
+          </span>
+        );
+      })}
     </div>
   );
 }
