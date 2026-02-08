@@ -129,7 +129,7 @@ body {
   border-radius: 12px;
 }
 
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
   .wrapper {
     width: 88%;
     max-width: 320px;
@@ -162,4 +162,4 @@ body {
   .rose {
     font-size: 1.4rem;
   }
-} */
+}
